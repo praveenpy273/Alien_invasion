@@ -4,7 +4,7 @@ import pygame
 from settings_01 import Settings
 from ship_01 import Ship
 
-""" Adding the attribute moving.right from Ship class to check_events method"""
+""" Adding ship update method to while loop so that every time loop is run it checks fir ship movement updates"""
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
@@ -29,6 +29,7 @@ class AlienInvasion:
         """ Set the main loop for the game"""
         while True:
                 self._check_events()
+                self.ship.update()
                 self._update_screen()
                 
     def _check_events(self):
