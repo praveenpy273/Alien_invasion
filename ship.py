@@ -1,5 +1,5 @@
 import pygame
-"""Allowing continous movement across right"""
+"""Adding ship continous movement across left as well"""
 class Ship:
     """A class to manage the ship"""
 
@@ -18,13 +18,16 @@ class Ship:
        
         #Movement Flag
         self.moving_right = False
+        self.moving_left = False
        
 
     def update(self):
         """Update ths ship's position based on movement flag."""
         if self.moving_right:
             self.rect.x += 1
-
+        if self.moving_left:
+            self.rect.x -= 1
+   
       
 
 
