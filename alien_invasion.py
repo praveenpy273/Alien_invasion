@@ -2,6 +2,8 @@ import sys
 import pygame
 from settings import Settings
 from ship import Ship
+'''Responding to keypress, if a key is pressed(KEYDOWN),check if it is right or left key
+when key is released(KEYUP),chec if it is right or left'''
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""

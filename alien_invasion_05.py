@@ -6,7 +6,7 @@ from ship_01 import Ship
 
 """ Adding helper methods check_events and update_screen 
     1. Code manging events is moved to check_events so that event management loop is isolated
-    2. COde that draws background and ships and flips the image is moved to update_screen"""
+    2. Code that draws background and ships and flips the image is moved to update_screen"""
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
 
