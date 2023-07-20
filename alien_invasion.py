@@ -4,10 +4,7 @@ import pygame
 from settings_01 import Settings
 from ship_01 import Ship
 
-""" Adding helper methods check_events and update_screen 
-    1. Code manging events is moved to check_events so that event management loop is isolated
-    2. Code that draws background and ships and flips the image is moved to update_screen
-    3. responding to key press """
+""" Adding the attribute moving.right from Ship class to check_events method"""
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
@@ -42,7 +39,10 @@ class AlienInvasion:
                     elif event.type == pygame.KEYDOWN:
                           if event.key == pygame.K_RIGHT:
                                 #Move the ship to the right
-                                self.ship.rect.x += 1
+                                self.ship.moving_right = True
+                    elif event.key == pygame.KEYUP:
+                        if event.key == pygame.K_RIGHT:
+                            self.ship.moving_right = False
 
     def _update_screen(self):
           # Updare images on the screen during each pass through the loop and flip to the new screen
