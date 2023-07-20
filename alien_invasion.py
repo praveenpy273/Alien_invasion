@@ -1,8 +1,8 @@
 """ Draw the ship to the screen"""
 import sys
 import pygame
-from settings_01 import Settings
-from ship_01 import Ship
+from settings import Settings
+from ship import Ship
 
 """ Adding ship update method to while loop so that every time loop is run it checks fir ship movement updates"""
 
@@ -41,9 +41,16 @@ class AlienInvasion:
                           if event.key == pygame.K_RIGHT:
                                 #Move the ship to the right
                                 self.ship.moving_right = True
+                          elif event.key == pygame.K_LEFT:
+                                #Move the ship to the left
+                                self.ship.moving_left = True
+
+                        
                     elif event.key == pygame.KEYUP:
                         if event.key == pygame.K_RIGHT:
                             self.ship.moving_right = False
+                        if event.key == pygame.K_LEFT:
+                            self.ship.moving_left = False
 
     def _update_screen(self):
           # Updare images on the screen during each pass through the loop and flip to the new screen
